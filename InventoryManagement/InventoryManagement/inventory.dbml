@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="inventory_management" Class="inventoryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\inventory_management.mdf;Integrated Security=True" SettingsObjectName="InventoryManagement.Properties.Settings" SettingsPropertyName="inventory_managementConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.brands" Member="brands">
+    <Type Name="brand">
+      <Column Name="brand_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="brand_title" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.categories" Member="categories">
+    <Type Name="category">
+      <Column Name="cat_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customers" Member="customers">
+    <Type Name="customer">
+      <Column Name="cust_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cust_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cust_phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cust_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email_address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[order]" Member="orders">
+    <Type Name="order">
+      <Column Name="order_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="order_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="order_shipment" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="vendor_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="total_bill" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.order_info" Member="order_infos">
+    <Type Name="order_info">
+      <Column Name="order_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pro_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pro_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="pro_quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.products" Member="products">
+    <Type Name="product">
+      <Column Name="pro_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pro_cat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pro_brand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pro_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pro_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="pro_quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_warranty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sales" Member="sales">
+    <Type Name="sale">
+      <Column Name="sale_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sale_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="cust_phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.employees" Member="employees">
+    <Type Name="employee">
+      <Column Name="emp_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="emp_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emp_gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emp_dob" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="emp_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emp_phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emp_nid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emp_address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="emp_join_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="emp_sal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="emp_rank" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.login" Member="logins">
+    <Type Name="login">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="user_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="user_pass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sale_info" Member="sale_infos">
+    <Type Name="sale_info">
+      <Column Name="pro_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pro_warranty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
