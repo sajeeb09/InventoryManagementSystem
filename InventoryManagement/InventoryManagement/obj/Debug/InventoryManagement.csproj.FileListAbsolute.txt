@@ -24,3 +24,6 @@ C:\Users\09\OneDrive\C#\InventoryManagement\InventoryManagement\obj\Debug\Invent
 C:\Users\09\OneDrive\C#\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.products.resources
 C:\Users\09\OneDrive\C#\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.PrintSale.resources
 C:\Users\09\OneDrive\C#\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.UserMenu.resources
+C:\Users\sajee\OneDrive\C#\InventoryManagementSystem\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe.config
+C:\Users\sajee\OneDrive\C#\InventoryManagementSystem\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.exe
+C:\Users\sajee\OneDrive\C#\InventoryManagementSystem\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.pdb
